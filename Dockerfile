@@ -2,7 +2,7 @@ FROM amd64/debian:12
 
 WORKDIR /app
 RUN apt-get update && apt upgrade -y
-RUN apt install wget unzip git curl build-essential neovim pkg-config cmake clang llvm gdb zlib1g-dev net-tools iproute2 sudo -y
+RUN apt install wget unzip git curl build-essential neovim pkg-config cmake clang llvm gdb zlib1g-dev net-tools iproute2 sudo iputils-ping -y
 
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
     -t robbyrussell
